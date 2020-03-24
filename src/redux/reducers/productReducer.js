@@ -18,3 +18,17 @@ const initialState = {
     isLoading: false,
     message: undefined
 }
+
+export default function ( state = initialState, action) {
+    switch(action.type) {
+        case FETCH_PRODUCTS:
+        return {
+            ...state,
+            items: action.payload,
+            filteredItems: action.payload,
+            adminActions: false
+        }
+        default:
+        return state
+    }
+}

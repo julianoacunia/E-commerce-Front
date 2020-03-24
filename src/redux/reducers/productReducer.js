@@ -8,7 +8,8 @@ import {
     UPDATE_PRODUCT_ERROR,
     DELETE_PRODUCT_PENDING,
     DELETE_PRODUCT_SUCCESS,
-    DELETE_PRODUCT_ERROR
+    DELETE_PRODUCT_ERROR,
+    SET_SELECTED_PRODUCT_ID
  } from '../actions/types'
 
 const initialState = {

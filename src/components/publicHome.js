@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Products from './Products'
+import Products from './products'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { Link } from 'react-router-dom'
@@ -20,11 +20,11 @@ class PublicHome extends Component {
         <hr />
         <div className='row'>
           <div className='col-md-8'>
-            <Filter />
+
             <Products />
           </div>
           <div className='col-md-4'>
-            <Basket />
+
           </div>
         </div>
       </div>

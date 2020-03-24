@@ -8,7 +8,7 @@ import {
   setProductOnForm
 } from '../redux/actions/productActions'
 
-class ProductHandler extends Component {
+class productHandler extends Component {
     componentDidMount() {
         this.props.fetchProducts()
     }
@@ -37,15 +37,14 @@ class ProductHandler extends Component {
 }
 
 const mapStateToProps = state => ({
-    products: state.products.items,
-    cartItems: state.cart.items
+    products: state.products.items
 })
   
 const mapDispatchToProps = dispatch => {
     return bindActionCreators(
-      { fetchProducts, addToCart, deleteProduct, setProductOnForm },
+      { fetchProducts, deleteProduct, setProductOnForm },
       dispatch
     )
   }
   
-  export default connect(mapStateToProps, mapDispatchToProps)(ProductsHandler)
+  export default connect(mapStateToProps, mapDispatchToProps)(productHandler)

@@ -22,7 +22,6 @@ class publicHome extends Component {
         <hr />
         <div className='row'>
           <div className='col-md-8'>
-            <Filter/>
             <Products/>
           </div>
           <div className='col-md-4'>

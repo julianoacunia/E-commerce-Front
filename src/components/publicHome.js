@@ -22,11 +22,11 @@ class publicHome extends Component {
         <hr />
         <div className='row'>
           <div className='col-md-8'>
-            <Filter />
-            <Products />
+            <Filter/>
+            <Products/>
           </div>
           <div className='col-md-4'>
-            <Basket />
+            <Basket/>
           </div>
         </div>
       </div>

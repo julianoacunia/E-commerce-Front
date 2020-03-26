@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
+import Basket from './basket'
+import Filter from './filter'
 import Products from './products'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { Link } from 'react-router-dom'
 
-class PublicHome extends Component {
+class publicHome extends Component {
   render() {
     return (
       <div className='container'>
@@ -20,11 +22,11 @@ class PublicHome extends Component {
         <hr />
         <div className='row'>
           <div className='col-md-8'>
-
+            <Filter />
             <Products />
           </div>
           <div className='col-md-4'>
-
+            <Basket />
           </div>
         </div>
       </div>
@@ -44,4 +46,4 @@ const mapDispatchToProps = dispatch => {
   return bindActionCreators({}, dispatch)
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(PublicHome)
+export default connect(mapStateToProps, mapDispatchToProps)(publicHome)

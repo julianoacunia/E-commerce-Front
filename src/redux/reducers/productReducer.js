@@ -9,7 +9,8 @@ import {
     DELETE_PRODUCT_PENDING,
     DELETE_PRODUCT_SUCCESS,
     DELETE_PRODUCT_ERROR,
-    SET_SELECTED_PRODUCT_ID
+    SET_SELECTED_PRODUCT_ID,
+    ORDER_PRODUCTS_BY_PRICE
  } from '../actions/types'
 
 const initialState = {
@@ -103,6 +104,12 @@ export default function ( state = initialState, action) {
               productSelected: action.payload
             }
         }
+        case ORDER_PRODUCTS_BY_PRICE:
+            return {
+              ...state,
+              sort: action.payload.sort,
+              items: action.payload.items
+            }
         default:
         return state
     }

@@ -5,7 +5,7 @@
     margin-top: -20px;
     width: auto;
     height: 688px;
-    background-image: url('../assests/registerVector.jpg');
+    background-image: url('../assets/registerVector.jpg');
 }
 #login {
     display: flex;

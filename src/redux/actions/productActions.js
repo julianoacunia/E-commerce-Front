@@ -16,7 +16,7 @@ import {
 
  // FETCH PRODUCTS
  export const fetchProducts = () => dispatch => {
-    fetch('http://localhost:5000/api/product')
+    fetch('http://localhost:5000/api/products')
         .then(res => res.json())
         .then(data => {
             return dispatch ({ type: FETCH_PRODUCTS, payload: data})

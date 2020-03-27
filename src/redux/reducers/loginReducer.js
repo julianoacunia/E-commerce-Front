@@ -72,6 +72,13 @@ export default function(state = initialState, action) {
               users: user
             }
         }
+        case ADD_USER_ERROR:
+        return {
+          ...state,
+          isLoading: false,
+          error: action.error,
+          message: action.payload.message
+        }
         default:
             return state
     }

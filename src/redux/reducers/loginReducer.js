@@ -20,3 +20,16 @@ const initialState = {
     token: '',
     failedLogin: false
 }
+
+export default function(state = initialState, action) {
+    switch (action.type) {
+      case IS_AUTH:
+        return {
+          ...state,
+          isAuth: action.payload.isAuth,
+          token: action.payload.token
+        }
+        default:
+            return state
+    }
+  }

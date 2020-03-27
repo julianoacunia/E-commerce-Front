@@ -39,6 +39,13 @@ export default function(state = initialState, action) {
           isLoading: true,
           failedLogin: false
         }
+        case LOGIN_USER_SUCCESS:
+        return {
+          ...state,
+          isLoading: false,
+          token: action.payload.token,
+          isAuth: true
+        }
         default:
             return state
     }

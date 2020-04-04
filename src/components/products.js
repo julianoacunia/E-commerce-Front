@@ -1,3 +1,4 @@
+import '../styles/products.css'
 import React, { Component } from 'react'
 import util from '../helpers/utils'
 import { connect } from 'react-redux'

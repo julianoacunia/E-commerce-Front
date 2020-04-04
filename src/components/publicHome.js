@@ -1,3 +1,4 @@
+import '../styles/home.css'
 import React, { Component } from 'react'
 import Basket from './basket'
 import Filter from './filter'

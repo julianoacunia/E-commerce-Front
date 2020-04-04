@@ -1,0 +1,23 @@
+.btn-primary {
+    color: #fff;
+    background-color: #4582EC;
+    border-color: #4582EC;
+    border-radius: 1.078em;
+}
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+p{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+b {
+    font-weight: bolder ;
+}
+a {
+    color: #4582EC;
+    text-decoration: none;
+    background-color: transparent
+}

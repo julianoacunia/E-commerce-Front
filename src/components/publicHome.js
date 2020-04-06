@@ -1,7 +1,5 @@
 import '../styles/home.css'
 import React, { Component } from 'react'
-import Basket from './basket'
-import Filter from './filter'
 import Products from './products'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
@@ -11,7 +9,9 @@ class publicHome extends Component {
   render() {
     return (
       <div className='container'>
-        <h1>---Welcome to t-shirts store!---</h1>
+        <div className='tittle'>
+        <h1>E-commerce-Acuña</h1>
+        </div>
         <div id='login2'>
           <div className='buttonmenu'>
             <Link to='/register'>Sign up</Link>
@@ -24,9 +24,6 @@ class publicHome extends Component {
         <div className='row'>
           <div className='col-md-8'>
             <Products/>
-          </div>
-          <div className='col-md-4'>
-            <Basket/>
           </div>
         </div>
       </div>

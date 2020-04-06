@@ -27,7 +27,7 @@ export const loginAccount = data => {
           password: document.getElementById('inputPassword').value
         })
       }
-      return fetch('http://localhost:5000/api/user/signIn', options)
+      return fetch('http://localhost:5000/api/users/signIn', options)
         .then(res => res.json())
         .then(res => {
           if (res.msg !== 'Invalid Email or password') {
@@ -63,7 +63,7 @@ export const logOut = dispatch => {
 
 // FETCH USERS
 export const fetchUser = () => dispatch => {
-    fetch('http://localhost:5000/api/user/')
+    fetch('http://localhost:5000/api/users/')
       .then(res => res.json())
       .then(data => {
         return dispatch({ type: FETCH_USERS, payload: data })
@@ -85,7 +85,7 @@ export const postUser = user => {
         body: JSON.stringify(user)
       }
       console.log('options', options)
-      return fetch(`http://localhost:5000/api/user`, options)
+      return fetch(`http://localhost:5000/api/users`, options)
         .then(res => res.json())
         .then(data => {
           console.log('POST USER', data)

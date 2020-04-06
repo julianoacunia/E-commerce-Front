@@ -19,7 +19,7 @@ class products extends Component {
             href={`#${product._id}`}
             onClick={() => this.props.addToCart(this.props.cartItems, product)}
           >
-            <img src={product.photo} alt='photo' />
+            <img src='https://via.placeholder.com/150' alt='photo' />
             <p>{product.title}</p>
           </a>
           <b>{util.formatCurrency(product.price)}</b>

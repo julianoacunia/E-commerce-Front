@@ -42,7 +42,7 @@ export const postProduct = product => {
             body: JSON.stringify(product)
         }
         console.log('options', options)
-        return fetch('http://localhost:5000/api/product', options)
+        return fetch('http://localhost:5000/api/products', options)
             .then( res => res.json())
             .then( data => {
                 console.log('POST PRODUCT', data)
@@ -82,7 +82,7 @@ export const deleteProduct = code => {
           Authorization: `BEARER ${token}`
         }
       }
-      return fetch(`http://localhost:5000/api/product/${code}`, options)
+      return fetch(`http://localhost:5000/api/products/${code}`, options)
         .then(res => res.json())
         .then(data => {
           console.log('DELETE PRODUCT', data)
@@ -122,7 +122,7 @@ export const updateProduct = product => {
         },
         body: JSON.stringify({ ...product })
       }
-      return fetch(`http://localhost:5000/api/product/${product._id}`, options)
+      return fetch(`http://localhost:5000/api/products/${product._id}`, options)
         .then(res => res.json())
         .then(data => {
           console.log('UPDATE PRODUCT', data)

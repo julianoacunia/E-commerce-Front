@@ -1,11 +1,13 @@
+import '../styles/privateHome.css'
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import { connect, useStore } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { postProduct, updateProduct } from '../redux/actions/productActions'
 import { Formik, Form, Field } from 'formik'
 import { Link } from 'react-router-dom'
 import { isAuth, logOut } from '../redux/actions/loginActions'
 import ProductsHandler from '../components/productHandler'
+import { fetchCategories } from '../redux/actions/categorieActions'
 
 class home extends Component {
   capturarDatos() {
@@ -14,25 +16,27 @@ class home extends Component {
       product => product._id === this.props.productSelected
     )
     return {
-      title: productToUpdate.title,
+      tittle: productToUpdate.tittle,
       description: productToUpdate.description,
       availableSize: productToUpdate.availableSize,
       price: productToUpdate.price
     }
   }
-
+  componentDidMount(){
+    this.props.fetchCategories()
+  }
   render() {
     return (
       <div className='container'>
-        <h1>---Admin panel---</h1>
+        <div className='tittle'>
+          <h1>---Admin panel---</h1>
+        </div>
         {this.props.isAuth ? (
-          <div className='logged'>
-            <div>Admin session</div>
-            <div className='buttonmenu'>
-              <Link to='/login' onClick={this.props.logOut}>
-                Logout
-              </Link>
-            </div>
+        <div className='logged'>
+          <div className='adminsession'>{this.props.name}</div>
+        <div className='buttonmenu'>
+          <Link to='/login' onClick={this.props.logOut}>Logout</Link>
+        </div>
           </div>
         ) : (
           <div id='login2'>
@@ -46,17 +50,23 @@ class home extends Component {
         )}
         <hr />
         <div className='row'>
-          <div>
-            <h4>Add new product ↓</h4>
+          <div className='productsHandler'>
+            <ProductsHandler />
+          </div>
+        </div>
+        <div className='forms-edition'>
+        <div className='form-add'>
+            <h4>Add new product</h4>
             <div className='form-container'>
               <Formik
                 initialValues={{
                   id: '',
                   photo: 'https://via.placeholder.com/150',
-                  title: '',
+                  tittle: '',
                   description: '',
                   availableSize: '',
-                  price: 0
+                  price: 0,
+                  category: ''
                 }}
                 onSubmit={values => {
                   this.props.postProduct(values)
@@ -74,7 +84,7 @@ class home extends Component {
                     }}
                   >
                     <Field type='text' name='id' placeholder='code' />
-                    <Field type='text' name='title' placeholder='tittle' />
+                    <Field type='text' name='tittle' placeholder='tittle' />
                     <Field
                       type='text'
                       name='description'
@@ -86,16 +96,17 @@ class home extends Component {
                       placeholder='availableSize'
                     />
                     <Field type='number' name='price' placeholder='price' />
-                    <button type='submit'>Submit</button>
+                    <Field as="select" name="category">
+                    {this.props.categories.map(category => 
+                      (<option value={category}>{category.name}</option>))}
+                    </Field>
+                    <button id='btn-form' type='submit'>Submit</button>
                   </Form>
                 )}
               </Formik>
             </div>
           </div>
-          <div className='col-md-8'>
-            <ProductsHandler />
-          </div>
-          <div className='col-md-4'>
+          <div className='form-update'>
             <h4>Update product</h4>
             <Formik
               initialValues={
@@ -139,13 +150,13 @@ class home extends Component {
                     placeholder='availableSize'
                   />
                   <Field type='number' name='price' placeholder='price' />
-                  <button type='submit'>Submit</button>
+                  <button id='btn-form' type='submit'>Submit</button>
                 </Form>
               )}
             </Formik>
           </div>
         </div>
-      </div>
+    </div>
     )
   }
 }
@@ -153,6 +164,8 @@ class home extends Component {
 const mapStateToProps = state => {
   return {
     products: state.products.items,
+    categories: state.categories.items,
+    name: state.users.user,
     isLoading: state.isLoading,
     isAuth: state.isAuth,
     productSelected: state.products.productSelected
@@ -161,7 +174,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return bindActionCreators(
-    { postProduct, updateProduct, isAuth, logOut },
+    { postProduct, updateProduct, isAuth, logOut, fetchCategories },
     dispatch
   )
 }

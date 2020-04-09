@@ -24,24 +24,26 @@ class login extends Component {
     })
   }
 
+
   render() {
     return (
       <div className='login-container'>
+        <div className='tittle-login'>
+          <h1>E-commerce-Acuña</h1>
+        </div>
+        <a className='Back-to-catalog'>
+        <Link className='Back-to-catalog-link' to='/catalog'>Back to catalog</Link>
+        </a>
         <Formik
           initialValues={{ name: '', password: '' }}
           onSubmit={this.getLogin}
         >
           {({ handleSubmit }) => (
-            <Form
+            <Form 
+              id='form-login'
               onSubmit={handleSubmit}
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-around',
-                marginTop: '20px'
-              }}
             >
-              <div className='Container'>
+              <div className='container-form'>
                 <div id='login'>
                   <Field
                     type='text'
@@ -66,29 +68,20 @@ class login extends Component {
                       Create Account
                     </Link>
                   </div>
-                  <div className='createAccount'>
-                    <Link
-                      id='buttonCreateAccount'
-                      className='buttonLogin'
-                      to='/catalog'
-                    >
-                      back to catalog
-                    </Link>
-                  </div>
                   {!this.props.isLoading ? (
-                    <button
-                      type='submit'
-                      id='buttonLogin'
-                      className='buttonLogin'
-                    >
-                      Log In
-                    </button>
+                      <button
+                        type='submit'
+                        id='buttonLogin'
+                        className='buttonLogin'
+                      >
+                        Log In
+                      </button>
                   ) : (
-                    <ClipLoader size={75} color={'white'} loading />
+                    <ClipLoader size={75} color={'black'} loading />
                   )}
-                  <div>
+                  <div className='bad-credentials-1'>
                     {this.props.failedLogin ? (
-                      <div id='bad-credentials'>BAD CREDENTIALS</div>
+                      <div id='bad-credentials'>Bad Credentials</div>
                     ) : null}
                   </div>
                 </div>

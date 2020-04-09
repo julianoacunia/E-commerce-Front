@@ -1,95 +1,97 @@
-.Container {
+.login-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: -20px;
-    width: auto;
-    height: 688px;
-    background-image: url('../assets/registerVector.jpg');
+    width: 100%;
+    height: 100%;
+}
+.tittle-login{
+    text-align: center;
+    background-color:#17a2b8;
+    color: #ffffff;
+    width: 100%;
+}
+.Back-to-catalog {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+.Back-to-catalog-link{
+    text-decoration: none;
+    color: #000;
+    margin-right: 10px;
 }
 #login {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 200px;
-    width: 45px;
-    height: 65px;
-    border-radius: 5px;
+    margin-top: 50px;
+    width: 100%;
 }
-
+#form-login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.container-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
 #inputName {
     margin: 5px;
-    width: 350px;
+    width: 325px;
     font-weight: bolder;
     font-size: 18px;
-    border-radius: 12px;
 }
   
 #inputPassword {
     margin: 5px;
-    width: 350px;
+    width: 325px;
     font-size: 18px;
-    border-radius: 12px;
     font-weight: bolder;
 }
 
 #buttonsLoginContainer {
     display: flex;
-    justify-content: space-around;
-    flex-direction: row;
+    justify-content: center;
     align-items: center;
+    flex-direction: row;
     margin: 5px;
 }
 
 #buttonCreateAccount {
-    background-color: rgb(255, 255, 255);
-    text-decoration: none;
-    border-radius: 11px;
-    font-size: 20px;
-    width: 160px;
-    margin: 20px;
+    background-color: #17a2b8;
+    color: #fff;
+    border: 1px solid transparent;
+    margin: 2px;
+    padding: 2px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
 
 }
-#buttonCreateAccount:hover {
-    background-color: rgb(200, 200, 200);
-    color: black;
-}
-#createAccount {
-    display: flex;
-    align-items: center;
-    height: 50px;
-    font-weight: bold;
-    border: 2px solid;
-}
 .buttonLogin {
-    display: flex;
-    justify-content: flex-start;
-    width: 100px;
-    font-weight: bold;
-    background-color: rgb(255, 255, 255);
-    color: black;
-    border-radius: 12px;
-    font-size: 20px;
-    font-weight: bold;
-    margin-right: 45px;
-}
-.buttonLogin:hover {
-    display: flex;
-    justify-content: flex-start;
-    width: 100px;
-    font-weight: bold;
-    background-color: rgb(200, 200, 200);
-    color: black;
-    border-radius: 6px;
-  
-    font-weight: bold;
-    margin-right: 45px;
+    background-color: #17a2b8;
+    color: #fff;
+    border: 1px solid transparent;
+    margin: 2px;
+    padding: 2px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
 }
 #bad-credentials {
     display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
     font-weight: bolder;
     font-size: 20px;
-    color: white;
+    color: rgb(243, 6, 6);
 }
 
 @media(max-width:522px) {
@@ -98,6 +100,6 @@
         justify-content: center;
         flex-direction: column;
         align-items: center;
-        margin: 3px;
+        margin: 5px;
     }
 }

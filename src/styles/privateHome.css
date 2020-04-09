@@ -1,0 +1,67 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tittle {
+    text-align: center;
+    background-color: #17a2b8;
+    color: #fff;
+    width: 100%;
+}
+
+.logged {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+}
+
+.row {
+    width: 100%;
+}
+
+.forms-edition {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    width: 100%;
+}
+.product-private {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+}
+.thumbnail-text-center {
+    text-align: center;
+}
+.form-add {
+    margin: 30px;
+}
+.btn-product {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.btn-product-handler {
+    background-color: #17a2b8;
+    color: #fff;
+    border: 1px solid transparent;
+    margin: 2px;
+    padding: 2px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#btn-form {
+    background-color: #17a2b8;
+    color: #fff;
+    border: 1px solid transparent;
+    cursor: pointer;
+}

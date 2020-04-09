@@ -13,6 +13,7 @@ import {
 const initialState = {
     isAuth: false,
     users: [],
+    name: undefined,
     error: null,
     isLoading: false,
     message: undefined,
@@ -44,7 +45,8 @@ export default function(state = initialState, action) {
           ...state,
           isLoading: false,
           token: action.payload.token,
-          isAuth: true
+          isAuth: true,
+          user: action.payload.user.name
         }
         case LOGIN_USER_ERROR:
         return {

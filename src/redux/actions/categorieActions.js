@@ -5,9 +5,9 @@ import {
     ADD_CATEGORIE_ERROR,
     DELETE_CATEGORIE_PENDING,
     DELETE_CATEGORIE_SUCCESS,
-    DELETE_CATEGORIE_ERROR,
-    DELETE_PRODUCT_ERROR
+    DELETE_CATEGORIE_ERROR
 } from './types'
+import store from '../store'
 
 // FETCH ACTIONS
 export const fetchCategories = () => dispatch => {
@@ -91,7 +91,7 @@ export const deleteCategorie = code => {
         })
         .catch(error => {
           return dispatch({
-            type: DELETE_PRODUCT_ERROR,
+            type: DELETE_CATEGORIE_ERROR,
             payload: error
           })
         })

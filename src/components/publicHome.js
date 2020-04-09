@@ -1,6 +1,7 @@
 import '../styles/home.css'
 import React, { Component } from 'react'
-import Products from './products'
+import Categories from './categorie'
+import Basket from './basket'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { Link } from 'react-router-dom'
@@ -10,21 +11,27 @@ class publicHome extends Component {
     return (
       <div className='container'>
         <div className='tittle'>
-        <h1>E-commerce-Acuña</h1>
-        </div>
-        <div id='login2'>
-          <div className='buttonmenu'>
-            <Link to='/register'>Sign up</Link>
-          </div>
-          <div className='buttonmenu'>
-            <Link to='/login'>Login</Link>
-          </div>
+          <h1>E-commerce-Acuña</h1>
         </div>
         <hr />
         <div className='row'>
-          <div className='col-md-8'>
-            <Products/>
+        <div className='col-md-8'>
+            <Categories/>
           </div>
+        <div id='col-md-4'>
+          <div className='menu'>
+            <div className='buttonmenu'>
+              <Link to='/register'>Sign up</Link>
+            </div>
+            <div className='buttonmenu'>
+              <Link to='/login'>Login</Link>
+            </div>
+          </div>
+          <div className='basket'>
+            <Basket/>
+          </div>
+        </div>
+          
         </div>
       </div>
     )
@@ -33,7 +40,8 @@ class publicHome extends Component {
 
 const mapStateToProps = state => {
   return {
-    products: state.products,
+    categories: state.categories,
+    cart: state.cart,
     isLoading: state.isLoading,
     isAuth: state.isAuth
   }

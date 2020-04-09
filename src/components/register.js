@@ -10,12 +10,22 @@ class register extends Component {
   render() {
     return (
       <div className='wrapper'>
-        <div className='register-container'>
-          <div className='top'>
-            <h2>
-              WELCOME TO THE REGISTER, COMPLETE THE FIELDS BELOW TO CREATE USER
-            </h2>
+        <div className='tittle-login'>
+          <h1>E-commerce-Acuña</h1>
+        </div>
+        <div id='container-back-to-login'>
+          <div className='back-to-login-div1'>
+            <Link id='back-to-login-link' to='/login'>
+              Back to Login
+            </Link>
           </div>
+          <div className='back-to-catalog-div1'>
+            <Link id='back-to-catalog-link' to='/catalog'>
+              Back to Catalog
+            </Link>
+          </div>
+        </div>
+        <div className='register-container'>
           <Formik
             initialValues={{ name: '', email: '', password: '', address: '' }}
             onSubmit={values => {
@@ -38,28 +48,24 @@ class register extends Component {
                   name='name'
                   id='inputUser'
                   placeholder='name'
-                  style={{ margin: '15px' }}
                 />
                 <Field
                   type='text'
                   name='email'
                   id='inputEmail'
                   placeholder='email'
-                  style={{ margin: '15px' }}
                 />
                 <Field
                   type='password'
                   name='password'
                   id='inputPassword'
                   placeholder='password'
-                  style={{ margin: '15px' }}
                 />
                 <Field
                   type='text'
                   name='address'
                   id='inputAddress'
                   placeholder='address'
-                  style={{ margin: '15px' }}
                 />
                 <button id='submitButton' type='submit'>
                   Submit
@@ -67,14 +73,6 @@ class register extends Component {
               </Form>
             )}
           </Formik>
-          <div id='container-back-to-login'>
-            <Link id='back-to-login' to='/login'>
-              Back to Login
-            </Link>
-            <Link id='back-to-login' to='/catalog'>
-              Back to Catalog
-            </Link>
-          </div>
         </div>
       </div>
     )

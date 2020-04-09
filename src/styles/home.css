@@ -16,6 +16,37 @@
     flex-direction: row;
     width: 100%;
 }
+.basket {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    width: 100%;
+    background-color: #17a2b8;
+    color: #fff;
+    font-size: 0.930125rem;
+    border-color: #bee5eb;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 0 solid transparent;
+    border-radius: 0.25rem;
+}
 .buttonmenu { 
     margin: 7px;
+}
+a { 
+    text-decoration: none;
+    color: #000;
+}
+.col-md-8 {
+    flex: 0 0 66.6666666667%;
+    max-width: 66.6666666667%;
+}
+
+.col-md-4 {
+   flex: 0 0 33.3333333333%;
+   max-width: 33.3333333333%;
+}
+.menu {
+    display: flex;
+    flex-direction: row;
 }

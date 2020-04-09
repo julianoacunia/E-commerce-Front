@@ -1,73 +1,73 @@
 .wrapper {
-    background-image: url(../assets/registerVector.jpg);
-    height: 688px;
+    display: flex;
+    flex-direction: column;
 }
 
 h2 {
     text-align: center;
     color: white;
 }
-
+.container-back-to-login{
+    display: flex;
+    width: 100%;
+}
 #inputUser {
     margin: 5px;
-    width: 350px;
+    width: 325px;
     font-weight: bolder;
     font-size: 18px;
-    border-radius: 12px;
 }
 
 #inputEmail {
     margin: 5px;
-    width: 350px;
+    width: 325px;
     font-weight: bolder;
     font-size: 18px;
-    border-radius: 12px;
 }
 
 #inputPassword {
     margin: 5px;
-    width: 350px;
+    width: 325px;
     font-weight: bolder;
     font-size: 18px;
-    border-radius: 12px;
 }
 
 #inputAddress {
     margin: 5px;
-    width: 350px;
+    width: 325px;
     font-weight: bolder;
     font-size: 18px;
-    border-radius: 12px;
 }
 
 #submitButton {
-    display: flex;
-    justify-content: flex-start;
-    width: 100px;
-    font-weight: bold;
-    background-color: rgb(255, 255, 255);
-    color: black;
-    border-radius: 12px;
-    font-size: 19px;
-    font-weight: bold;
-    margin-right: 45px;
-    margin: 10px;
+    background-color: #17a2b8;
+    color: #fff;
+    border: 1px solid transparent;
+    margin: 2px;
+    padding: 2px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
 }
 
 #container-back-to-login {
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    width: 100%;
 }
-
-#back-to-login {
-    display: flex;
-    text-align: center;
-    font-weight: bold;
-    background-color: rgb(255, 255, 255);
-    color: black;
-    border-radius: 12px;
-    font-size: 19px;
-    font-weight: bold;  
+.back-to-login-div1{
+    width: 50%;
+}
+.back-to-catalog-div1 {
+    width: 50%;
+}
+#back-to-login-link {
     text-decoration: none;
-    margin: 5px;
+    color: #000;
+    margin-left: 18px;
+}
+#back-to-catalog-link {
+    text-decoration: none;
+    color: #000;
+    margin-left: 550px;
 }
